@@ -12,10 +12,15 @@ int _tmain(int argc, _TCHAR* argv[])
 	double zA = 0, zS = 0, zM = 0, zD = 0, zP = 0, zL = 0;
 	CoInitialize(NULL);
  
+	
+	IUnknown* uk = NULL;
+	HRESULT hrA = CoCreateInstance(CLSID_BVAA, NULL, CLSCTX_INPROC_SERVER, IID_IUnknown, (void**)&uk);
+	printf("got CoCreateInstance result %d\n", hrA);
+
 	IBVAA_summer* ps = NULL;
-	HRESULT hrA = CoCreateInstance(CLSID_BVAA, NULL, CLSCTX_INPROC_SERVER, IID_IBVAA_summer, (void**)&ps );
-	printf("got CoCreateInstance result %d", hrA);
-	if (SUCCEEDED(hrA)) {
+	HRESULT hrA_s = uk->QueryInterface(IID_IBVAA_summer, (void**)&ps);
+
+	if (SUCCEEDED(hrA_s)) {
 		ps->Add(2,3,zA); printf("ps->Add(2,3,zA) = %4f \n", zA);
 		ps->Sub(16,5, zS); printf("ps->Sub(16,5, zS) = %4f \n", zS);
 		//ps->Release(); 
