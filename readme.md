@@ -21,3 +21,8 @@ Create a virtual environment of a 32-bit python version with comtypes installed.
 ## Source
 
 - [COM in C (codeproject)](https://www.codeproject.com/Articles/338268/COM-in-C)
+
+## Resources
+
+- [Comprehensible notes on Aggregation in COM](https://www.codeproject.com/Articles/5337/COM-Concept-Unleashing-Aggregation)
+- [Explaination of the ClassFactory concept](https://www.codeproject.com/Articles/4685/Single-class-object-for-multiple-COM-classes)
