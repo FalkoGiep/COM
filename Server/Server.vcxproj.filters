@@ -12,53 +12,53 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="Laba2Com2x.def">
+    <None Include="Server.def">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="include\BVAA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="include\BVAB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IBVAA.h">
+    <ClInclude Include="include\ClassFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IBVAB.h">
+    <ClInclude Include="include\IBVAA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BVAA.h">
+    <ClInclude Include="include\IBVAB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BVAB.h">
+    <ClInclude Include="include\Registry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Registry.h">
+    <ClInclude Include="include\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClassFactory.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\stdafx.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="src\BVAA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Server.cpp">
+    <ClCompile Include="src\BVAB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="src\dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BVAB.cpp">
+    <ClCompile Include="src\Registry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BVAA.cpp">
+    <ClCompile Include="src\Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Registry.cpp">
+    <ClCompile Include="src\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
