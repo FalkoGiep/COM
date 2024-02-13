@@ -3,8 +3,7 @@
 
 extern ULONG g_ServerLocks;
 template <typename T>
-class ClassFactory :
-	public IClassFactory 
+class ClassFactory : public IClassFactory 
 {
 protected:
    // Reference count
@@ -19,7 +18,7 @@ public:
 	virtual ULONG   STDMETHODCALLTYPE AddRef(void);
 	virtual ULONG   STDMETHODCALLTYPE Release(void);
 
-	/*Basic interface IClassFactory contains 2 methods:*/
+	// IClassFactory
 	virtual HRESULT STDMETHODCALLTYPE CreateInstance(LPUNKNOWN pUnk,  const IID& id, void** ppv); 
 	virtual HRESULT STDMETHODCALLTYPE LockServer (BOOL fLock); 
 
@@ -68,11 +67,12 @@ ULONG   STDMETHODCALLTYPE ClassFactory<T>::Release(void) {
 }
 
 template <typename T>
-HRESULT STDMETHODCALLTYPE ClassFactory<T>::CreateInstance	(LPUNKNOWN pUnk, //basic interface IUnknown
-																const IID& id,	// id of required interface
-																void** ppv)	//required interface
+HRESULT STDMETHODCALLTYPE ClassFactory<T>::CreateInstance(
+	LPUNKNOWN pUnk,
+	const IID& id,	
+	void** ppv
+)
 {
-	//SEQ;
 	HRESULT rc = E_UNEXPECTED;
 
 	if (pUnk != NULL) rc = CLASS_E_NOAGGREGATION;
@@ -93,6 +93,5 @@ template <typename T>
 HRESULT STDMETHODCALLTYPE ClassFactory<T>::LockServer (BOOL fLock) {
 	if (fLock)  InterlockedIncrement ((LONG*)&(g_ServerLocks));
 	else    InterlockedDecrement ((LONG*)&(g_ServerLocks));
-	
 	return S_OK;
 }
