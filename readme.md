@@ -8,6 +8,12 @@ Test project to experiment with COM technology based on code from codeproject.
 
 Build with VS on win32. Register the resulting server.dll with regsvr32.
 
+`regsvr32 server.dll`
+
+### unregister dll
+
+`regsvr32 /U server.dll`
+
 ### python client
 
 Create a virtual environment of a 32-bit python version with comtypes installed.
