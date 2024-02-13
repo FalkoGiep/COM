@@ -20,22 +20,23 @@ const WCHAR ProgId[] = L"BVAA.Component.1";
 const WCHAR FName2[]  = L"BVA COM2";
 const WCHAR VerInd2[] = L"BVAB.Component";
 const WCHAR ProgId2[] = L"BVAB.Component.2";
-//extern "C"  __declspec(dllexport) HRESULT DllInstall(char* s);
-//extern "C"  __declspec(dllexport) HRESULT DllRegisterServer();
-//extern "C"  __declspec(dllexport) HRESULT DllUnregisterServer();
 STDAPI DllInstall(char* s);
 STDAPI DllRegisterServer();
 STDAPI DllUnregisterServer();
 // This function will register a component in the Registry.
 // The component calls this function from its DllRegisterServer function.
-HRESULT RegisterServer(HMODULE hModule, 
-                       const CLSID& clsid, 
-                       const WCHAR* szFriendlyName,
-                       const WCHAR* szVerIndProgID,
-                       const WCHAR* szProgID) ;
+HRESULT RegisterServer(
+    HMODULE hModule,
+    const CLSID& clsid,
+    const WCHAR* szFriendlyName,
+    const WCHAR* szVerIndProgID,
+    const WCHAR* szProgID
+);
 
 // This function will unregister a component.  Components
 // call this function from their DllUnregisterServer function.
-HRESULT UnregisterServer(const CLSID& clsid,
-                         const WCHAR* szVerIndProgID,
-                         const WCHAR*  szProgID) ;
+HRESULT UnregisterServer(
+    const CLSID& clsid,
+    const WCHAR* szVerIndProgID,
+    const WCHAR* szProgID
+);

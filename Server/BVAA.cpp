@@ -34,13 +34,11 @@ HRESULT STDMETHODCALLTYPE BVAA::QueryInterface(REFIID riid, void  **ppv) {
 
 ULONG STDMETHODCALLTYPE BVAA::AddRef(void) {
 	InterlockedIncrement ((LONG*)&(this->m_lRef));
-
 	return this->m_lRef;
 }
 
 ULONG STDMETHODCALLTYPE BVAA::Release(void) {
 	InterlockedDecrement ((LONG*)&(this->m_lRef));
-
 	if ( m_lRef == 0 ) {
 		delete this;
 		return 0;

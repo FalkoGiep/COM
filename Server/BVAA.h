@@ -6,7 +6,7 @@ class BVAA : public IBVAA_summer, public IBVAA_multiplier
 {
 protected:
    // Reference count
-   long          m_lRef;
+   long m_lRef;
 
 public:
 	BVAA(void);
