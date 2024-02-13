@@ -10,14 +10,17 @@ ULONG g_Components  = 0;
 extern  GUID CLSID_BVAA;
 extern  GUID CLSID_BVAB;
 
-STDAPI DllCanUnloadNow() {
+__control_entrypoint(DllExport)
+STDAPI  DllCanUnloadNow(void) {
 	//SEQ;
 	HRESULT rc = E_UNEXPECTED;
 	if ((g_ServerLocks == 0)&&(g_Components  == 0)) rc = S_OK;
 	else rc = S_FALSE;
 	return rc;
 };
-STDAPI DllGetClassObject(const CLSID& clsid, const IID& iid, void**ppv) {
+
+_Check_return_
+STDAPI DllGetClassObject(_In_ REFCLSID clsid, _In_ REFIID iid, _Outptr_ LPVOID FAR* ppv) {
 	//SEQ;
 	HRESULT rc = E_UNEXPECTED;
 
