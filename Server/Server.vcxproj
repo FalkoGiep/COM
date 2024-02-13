@@ -89,8 +89,8 @@
     <ClInclude Include="include\IBVAA.h" />
     <ClInclude Include="include\IBVAB.h" />
     <ClInclude Include="include\Registry.h" />
+    <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
-    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BVAA.cpp" />
@@ -98,7 +98,7 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Registry.cpp" />
     <ClCompile Include="src\Server.cpp" />
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
