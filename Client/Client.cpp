@@ -4,8 +4,8 @@
 #include "stdafx.h"
 #include "ObjBase.h"
 #include "COM.h"
-#include "../Server/IBVAA.h";
-#include "../Server/IBVAB.h";
+#include "../Server/include/IBVAA.h";
+#include "../Server/include/IBVAB.h";
 
 int _tmain(int argc, _TCHAR* argv[])
 {
