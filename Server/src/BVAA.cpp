@@ -13,7 +13,8 @@ BVAA::~BVAA(void)
 	InterlockedDecrement((LONG *)&g_Components);
 }
 
-// IUnknown
+#pragma region IUknown
+
 HRESULT STDMETHODCALLTYPE BVAA::QueryInterface(REFIID riid, void **ppv)
 {
 	HRESULT rc = S_OK;
@@ -57,7 +58,10 @@ ULONG STDMETHODCALLTYPE BVAA::Release(void)
 		return m_lRef;
 }
 
-// IBVAA_summer
+#pragma endregion
+
+#pragma region IBVAA_summer
+
 HRESULT STDMETHODCALLTYPE BVAA::Add(const double x, const double y, double &z)
 {
 	z = x + y;
@@ -83,3 +87,5 @@ HRESULT STDMETHODCALLTYPE BVAA::Div(const double x, const double y, double &z)
 	z = x / y;
 	return S_OK;
 }
+
+#pragma endregion

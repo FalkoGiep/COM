@@ -14,7 +14,8 @@ BVAB::~BVAB(void)
 	InterlockedDecrement((LONG *)&g_Components);
 }
 
-// IUnknown
+#pragma region IUknown 
+
 HRESULT STDMETHODCALLTYPE BVAB::QueryInterface(REFIID riid, void **ppv)
 {
 	HRESULT rc = S_OK;
@@ -58,7 +59,10 @@ ULONG STDMETHODCALLTYPE BVAB::Release(void)
 		return this->m_lRef;
 }
 
-// IBVAB_multiplier
+#pragma endregion
+
+#pragma region IBVAB_multiplier
+
 HRESULT STDMETHODCALLTYPE BVAB::Pow(const double x, const double y, double &z)
 {
 	z = pow(x, y);
@@ -70,3 +74,5 @@ HRESULT STDMETHODCALLTYPE BVAB::Log(const double x, const double y, double &z)
 	z = log(x) / log(y);
 	return S_OK;
 }
+
+#pragma endregion
