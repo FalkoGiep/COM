@@ -1,0 +1,15 @@
+@startuml
+!pragma teoz true
+box computer #LightBlue
+box application
+participant code
+participant "COM Client"
+end box
+participant "COM Server"
+end box
+participant Arduino
+
+code -> "COM Client"
+"COM Client"-> "COM Server"
+"COM Server"-> Arduino
+@enduml
