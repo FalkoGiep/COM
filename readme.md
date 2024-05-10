@@ -36,3 +36,4 @@ Create a virtual environment of a 32-bit python version with comtypes installed.
 - [Comprehensible notes on Aggregation in COM](https://www.codeproject.com/Articles/5337/COM-Concept-Unleashing-Aggregation)
 - [Explaination of the ClassFactory concept](https://www.codeproject.com/Articles/4685/Single-class-object-for-multiple-COM-classes)
 - [COM server explained 2](https://www.codeproject.com/Articles/901/Introduction-to-COM-Part-II-Behind-the-Scenes-of-a)
+- [Explaining the differences between most concepts and their relations](https://docwiki.embarcadero.com/RADStudio/Athens/en/Parts_of_a_COM_Application)
