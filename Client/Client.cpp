@@ -4,50 +4,33 @@
 #include "stdafx.h"
 #include "ObjBase.h"
 #include "COM.h"
-#include "../Server/include/IBVAA.h";
-#include "../Server/include/IBVAB.h";
+#include "../Server/include/JSON_Share/I_JSON_Share.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	double zA = 0, zS = 0, zM = 0, zD = 0, zP = 0, zL = 0;
 	CoInitialize(NULL);
  
-	
-	IUnknown* uk = NULL;
-	HRESULT hrA = CoCreateInstance(CLSID_BVAA, NULL, CLSCTX_INPROC_SERVER, IID_IUnknown, (void**)&uk);
-	printf("got CoCreateInstance result %d\n", hrA);
+	IUnknown* unknown = NULL;
+	HRESULT hr_unknown = CoCreateInstance(
+		CLSID_JSON_Share,
+		NULL, 
+		CLSCTX_INPROC_SERVER, 
+		IID_IUnknown, 
+		(void**)&unknown
+	);
+	printf("got CoCreateInstance result %d\n", hr_unknown);
 
-	IBVAA_summer* ps = NULL;
-	HRESULT hrA_s = uk->QueryInterface(IID_IBVAA_summer, (void**)&ps);
+	I_JSON_Share * json_share = NULL;
+	HRESULT hr_json_share = unknown->QueryInterface(IID_JSON_Share, (void**)&json_share);
 
-	if (SUCCEEDED(hrA_s)) {
-		ps->Add(2,3,zA); printf("ps->Add(2,3,zA) = %4f \n", zA);
-		ps->Sub(16,5, zS); printf("ps->Sub(16,5, zS) = %4f \n", zS);
-		//ps->Release(); 
+	if (SUCCEEDED(hr_json_share)) {
+		int value;
+		json_share->Get(2, value);
+		printf("json_share->Get(2, value) %i \n", value);
 	};
 
-	IBVAA_multiplier* pm = NULL;
-	HRESULT hrA_m = ps->QueryInterface(IID_IBVAA_multiplier, (void**)&pm);
-	
-	if (SUCCEEDED(hrA_m)) {
-		pm->Mul(3,6, zM); printf("pm->Mul(3,6, zM) = %4f \n", zM);
-		pm->Div(16,4, zD); printf("pm->Div(16,4, zD) = %4f \n", zD);
-		pm->Release();
-	};
-	ps->Release();
-
-	IBVAB_power* pp = NULL;
-	
-	HRESULT hrB  = CoCreateInstance(CLSID_BVAB, NULL, CLSCTX_INPROC_SERVER, IID_IBVAB_power, (void**)&pp );
-
-	if (SUCCEEDED(hrB)) {
-		pp->Pow(2,3,zP);  printf("pp->Pow(2,3,zP) = %4f \n", zP);
-		pp->Log(16,2, zL);   printf("pp->Log(16,2, zL) = %4f \n", zL);
-		pp->Release();
-	};
-	
+	json_share->Release();
 	CoFreeUnusedLibraries();
-
 	return 0;
 }
 

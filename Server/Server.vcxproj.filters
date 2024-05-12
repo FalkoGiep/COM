@@ -17,19 +17,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\BVAA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\BVAB.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\ClassFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\IBVAA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\IBVAB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Registry.h">
@@ -41,14 +29,14 @@
     <ClInclude Include="include\stdafx.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\JSON_Share\I_JSON_Share.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\JSON_Share\JSON_Share.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\BVAA.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BVAB.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,6 +47,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JSON_Share.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

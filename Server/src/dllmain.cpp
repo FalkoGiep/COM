@@ -1,8 +1,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "stdafx.h"
 
-extern HMODULE hBVAA;
-extern HMODULE hBVAB;
+extern HMODULE Module_JSON_Share;
 
 BOOL APIENTRY DllMain(
 	HMODULE hModule,
@@ -12,8 +11,7 @@ BOOL APIENTRY DllMain(
 	switch (ul_reason_for_call)
 	{
 	case DLL_PROCESS_ATTACH:
-		hBVAA = hModule;
-		hBVAB = hModule;
+		Module_JSON_Share = hModule;
 		break;
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:

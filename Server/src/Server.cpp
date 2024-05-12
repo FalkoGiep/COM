@@ -1,14 +1,13 @@
 
 #include "stdafx.h"
 #include "ClassFactory.h"
-#include "BVAA.h"
-#include "BVAB.h"
+#include "JSON_Share/JSON_Share.h"
+//#include "Registry.h"
 
+extern GUID CLSID_JSON_Share;
 ULONG g_ServerLocks = 0;
 ULONG g_Components = 0;
 
-extern GUID CLSID_BVAA;
-extern GUID CLSID_BVAB;
 
 __control_entrypoint(DllExport)
 	STDAPI DllCanUnloadNow(void)
@@ -27,15 +26,9 @@ _Check_return_
 {
 	HRESULT rc = E_UNEXPECTED;
 
-	if (clsid == CLSID_BVAA)
+	if (clsid == CLSID_JSON_Share)
 	{
-		ClassFactory<BVAA> *cf = new ClassFactory<BVAA>();
-		rc = cf->QueryInterface(iid, ppv);
-		cf->Release();
-	}
-	else if (clsid == CLSID_BVAB)
-	{
-		ClassFactory<BVAB> *cf = new ClassFactory<BVAB>();
+		ClassFactory<JSON_Share> *cf = new ClassFactory<JSON_Share>();
 		rc = cf->QueryInterface(iid, ppv);
 		cf->Release();
 	}

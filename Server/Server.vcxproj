@@ -83,19 +83,16 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\BVAA.h" />
-    <ClInclude Include="include\BVAB.h" />
     <ClInclude Include="include\ClassFactory.h" />
-    <ClInclude Include="include\IBVAA.h" />
-    <ClInclude Include="include\IBVAB.h" />
+    <ClInclude Include="include\JSON_Share\I_JSON_Share.h" />
+    <ClInclude Include="include\JSON_Share\JSON_Share.h" />
     <ClInclude Include="include\Registry.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\BVAA.cpp" />
-    <ClCompile Include="src\BVAB.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\JSON_Share.cpp" />
     <ClCompile Include="src\Registry.cpp" />
     <ClCompile Include="src\Server.cpp" />
     <ClCompile Include="src\stdafx.cpp">
