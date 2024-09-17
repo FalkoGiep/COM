@@ -1,4 +1,4 @@
-![Coverity Scan Build Status](https://scan.coverity.com/projects/30682/badge.svg)
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/30682/badge.svg)](https://scan.coverity.com/projects/falkogiep-com)
 # Documenation
 
 Test project to experiment with COM technology based on code from codeproject.
