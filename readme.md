@@ -1,3 +1,4 @@
+![Coverity Scan Build Status](https://scan.coverity.com/projects/30682/badge.svg)
 # Documenation
 
 Test project to experiment with COM technology based on code from codeproject.
